@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.iir.ui.BattleWindowController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #0B0B45;" BorderPane.alignment="CENTER">
+         <children>
+            <MFXButton onAction="#backButtonPressed" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: red;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+            </MFXButton>
+            <MFXButton onAction="#infoWindowButtonPressed" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #04D2D5;" text="Info" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #0B0B45;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BATTLE">
+               <font>
+                  <Font name="Goudy Old Style Bold" size="50.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="105.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="875.0" prefWidth="650.0" spacing="7.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="armyOneLabel" text="ArmyOne">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="armyOneCommanderName" text="CommanderName">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="217.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/caa2bad5c65378a0bd6bf56ad80c706d.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alive">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Label fx:id="armyOneCommanderHealth" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyOneCommanderAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyOneCommanderArmorLabel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyOneCommanderAliveOrDeadLabel" text="Alive">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="InfatryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RangeUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneInfatryUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneRangeUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneInfatryUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneRangeUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneInfatryUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneRangeUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneInfatryUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneRangeUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneInfatryUnitNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneRangeUnitNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CavalryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MageUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneCavlryUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneMageUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneCavlryUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneMageUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneCavlryUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneMageUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneCavalryUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneMageUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneCavalryNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyOneMageNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Number Of Units">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="17.0" />
+               </font>
+            </Text>
+            <Label fx:id="armyOneTotalNumberOfUnits" text="1000">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="875.0" prefWidth="650.0" spacing="7.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="armyTwoLabel" text="ArmyTwo">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="armyTwoCommanderName" text="CommanderName">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="217.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Guldan4.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alive">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Label fx:id="armyTwoCommanderHealth" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyTwoCommanderAttackLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyTwoCommanderArmorLabel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="armyTwoCommanderAliveOrDeadLabel" text="Alive">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="InfatryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RangeUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoInfatryUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoRangeUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoInfatryUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoRangeUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoInfatryUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoRangeUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoInfatryUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoRangeUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoInfatryUnitNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoRangeUnitNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CavalryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MageUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoCavlryUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoMageUnitNameLabel" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoCavlryUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoMageUnitHealthLabel" text="Health">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoCavlryUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoMageUnitAttackLabel" text="Attack">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="275.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoCavalryUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoMageUnitArmorLAbel" text="Armor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoCavalryNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="armyTwoMageNumberOfUnitsLabel" text="100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Number Of Units">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="17.0" />
+               </font>
+            </Text>
+            <Label fx:id="armyTwoTotalNumberOfUnits" text="1000">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="armyOneVsArmyTwoLabel" text="ArmyOne vs ArmyTwo">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="winnerLabel" textFill="#14bf45">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <MFXButton onAction="#startBattleButtonPressed" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: green;" text="Start Battle" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </MFXButton>
+            <MFXButton onAction="#resetBattleButtonPressed" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: green;" text="Reset Battle" textFill="#fffefe">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </MFXButton>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Terrain Type">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Forest">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="forestTerrainChechBoks" onAction="#forestCheckClick" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hills">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="hillsTerrainCheckBoks" onAction="#hillsCheckClick" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Plains">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="plainsTerrainCheckBoks" onAction="#plainsCheckClick" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

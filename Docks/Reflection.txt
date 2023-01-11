@@ -1,0 +1,145 @@
+Refleksjons notat
+
+    Refleksjon Test Klassar:
+
+        - Første problemet eg fekk når eg lagde test klassar var, korleis eg testar ein exeptionhandeling. Det eg måtte bruke var ein klasse ExpectedException, dette
+        fant eg fort ut av og det gjekk fint. Men når eg bruka den, ivertfall slik eg har såtte opp test koden so må eg lage objected til slutt. Som oftast når eg setter opp
+        ein test metode so lager eg objekt først. Dette tokk meg litt tid for å finne ut av, og eg veit forsatt ikkje kvifor eg må gjere det på denne måten.
+
+        - Det andre problemet eg fekk var at når eg skule lage ein test for metoden battle, so viste eg ikkje korleis eg skulle sette den opp. Grunnen til det
+        var fordi når det er eit tilfeldig utkom, so korleis kan man teste det sidan man ikkje kan vete kva som blir retunert. Svare på dette var då at man ikkje
+        kan vete det. Dette fekk eg vete med læraren etter at eg hadde brukt halvannen time på å prøve å få det til uten noko hell. Dette var litt iriterande,
+        men godt å vete at det ikkje var eg som var ubruklig men at det ikkje går å teste det.
+
+        - Det tredje problemet eg komm opp imot, som kan egentlig seiest å være det første er at sidan Unit klassen er abstrakt so kan eg ikkje opprette eit object av den.
+        Det eg tenkte først var at sidan dei andre klassane arva ifrå Unit klassen so kunne eg bruke dei som test for konstruktøren. Når det kom til å test metodane til Unit
+        klassen so kunne eg berre lage eit objekt av ein anna klasse og bruke den til å kjøre metodane.
+        Etter litt refliksjon so fant eg ut at dette var ein ganske dårlig løsning. Først og fremste so har eg laga mange fleire test metoder so har eg laga mange fleire test
+        metoder en eg har trengt. Ikkje at det er gale å ha mange test metoder, men eg vil heller a kvalitet over kvantitet. Eg testa alle konstruktøreane til sub klassane til Unit.
+        Dette kunne eg ha gjort med å test konstruktren i Unit. Ein anna problem med dette er at sidan eg brukte InfantryUnit som objekt til å test metodane i Unit,
+        so vil eg få problem vis eg seinare vil slette InfantryUnit. Då vil alle test metodane slutte å funke for Units. TestUnit og InfatryUnit klassane er for tett kobla.
+        Eg har også laga test metoda for alle get metodane. Dette er ikkje nødvendig sidan at get metodane funka automatisk vis konstruktøren er rikktig.
+        Måten eg fiksa dette på er å lage ein dummyklasse som arva ifrå unit til å bruke til å lage eit objekt av Unit klassen. Denne klassen vil jo aldri forsvinne sidan
+        den er der berre for å tests Unit. Då vil Unit ikkje være for tett kobla opp imot nokon andre av klassane. Etter å ha gjort dette so kan eg fjerne ein del metoder på dei andre
+        klassane og alle testget metodane.
+
+        - Eit fjerde lite problem eg hadde var berre at namngivinga på test klassane var dårege. Eg har test foran alle test klassane. Dette er dårlig siden vis eg har lyst å
+        søke etter ein test klasse so må eg skrive test og so kva klasse eg søker på sidan test er først. Har eg test til slutt so kan eg berre skrive Unit og so ser eg når eg får
+        opp unit klasser at det står UnitTest, slik at eg ser fort kva som er test klasse og eg kan først søke på namnet på klassen eg vil teste.
+
+        - Måtte refactore dei til å passe Junit 5 isteden for Junit 4. Også eg måtte skrive om fordi eg valkte å ha TerrainType i construktøren til unit.
+
+        - UnitFactory er litt rar å teste. Metodane har mange parameter som eg kansje burde teste, men sidan dei blir brukt til å lage ein Unit og Unit er testa, so
+        konknluderer eg med at eg trenger kun å teste dei parametara som ikkje blir brukt til å lage sjøve Uniten (Samme parameter som blir brukt i Unit konstruktør).
+
+    Refleksjon konstruktører:
+
+        - Først når eg såg 2 konstruktørar so vart eg litt forvirra. Eg sjønte ikkje heilt poenget med det.
+        Kvifor skule man ha 2 stykk når man berre bruker 1 konstruktør for å lage eit objekt. Men etter kvart litt reflektering,
+        so fant eg ut at eg kan bruke 2 stykker seinare i oppgåva. Førs so kan eg sette opp programet eg laga slik at vis brukeren vil,
+        so kan den få lov å ha ein game mode der brukeren sjølv velger stats.
+        For det andre so kan eg lage fleire spesial units som er basert på ein av unitklassane slik som commander er basert på cavliry unit. Eg kan også
+        sette opp slik at brukren sjølv også kan sette opp sin eigen spesiel juneit, kansje. Må sjå nærmare på det når eg kjem ut i oppgåva.
+
+        - Eit anna problem eg hadde som egentlig var ganske dumt, var at eg brukte veldig lang til på å finne ut korleis når eg arva klassen so korleis skulle eg
+        sette inn spesefikke statts for nokon av parametra i konstruktøren. Det man berre gjer då er jo å berre skrive stattsa rett inn i konstruktøren, men det eg
+        prøvde på først var å sette ein variabel som eg tokk inn i konstruktøren, slik eg har altid gjort det. Når dette ikkje funka, so var eg so forvirra og brukte
+        ein liten tid på å finne ut korleis eg fiksa det. Til slutt fant eg det ut of følgte meg ganske dum.
+
+        - Etter å ha levert først oppgåva, den delen der man lager all backend klassane, so såg eg at i konstruktøren i Unit klassen so hadde eg duplikat kode. Med det
+        meiner eg at eg hadde 3 if-else som hånterte at ein int verdi måtte være øver 0. Grunne til eg hadde det var fordi at eg har 3 parameter som skal ha ein int verdi
+        som må være øver 0. Dette bure eg skrive om til ein metode som hånterer det og so heller få parametera til å bruke den metoden for å sjekke verdien den får inn.
+        Problemet med dette er at eg ikkje veit korleis eg skal fikse dette. Må sjå nærmare på det. Dette hjelder ikkje berre Unit klassen, men dei fleste klassar. For eksempel
+        i Battle klassen, so har eg ein konstruktør som setter der eg får inn 2 army. Begge desse blir sjekka for at det ikkje blir lagt inn null når eg lagar eit objekt av
+        battle. Her har eg då 2 if-else som gjer det samme, og samme her bure deg greie å lage ein metode som fikkser dette og so brukar dei 2 parametera denne metoden.
+        Eg fekk fiksa dette med å lage ein metode som sjekka verdien for int parameteren om den var øver 0 eller =0/under 0. I denne metoden har eg ein trow IllegaulArgument, må
+        høre om detter er ein grei måte å gjere det på.
+
+        - Etter kvar so måte eg lege til TerrainType i konstruktøren. Grunnen til at eg vil lege den til der er for di sidan alle units skal ha terrain so uansett kva som
+        kan den like godt være i konstruktøren deira. Deter det som er lettast, og eg ser ikkje at det kresja med noko anna når det kjem til krav for god kode.
+
+    Refleksjon ArrayList:
+
+        - Først når eg såg oppgåva so tenkte eg med ein gong at eg berre kan bruke ArrayList som register. Etter kvart no som eg har lært meir, so begynner eg
+        å lure på om det er nokon betre lister eg kan bruke. Det funka med ArrayList, men kansje det er nokon som er mindre arbeid som passar betre til den oppgåva
+        eg gjer, eventuelt om eg får noko vansklege løysningar seinare. Dette må eg sjå nærmare på. Vis eg beste meg for å skifte kva liste eg brukar so kan det bli
+        ein del ekstra arbeid.
+
+        - No etter kvart eg har begynt med streams og lambda so bruker eg meir List og ikkje ArrayList sidan det er lettare. Må sjå på om eg burde bytte ut ArrayList.
+
+        - Opprete List går ikkje, må arve fult av metoder, men å bruke den til lambda og streams går fint utten å opprete objekt av List. Kvifor funker det sån?
+        Må forhøre meg.
+
+    Reflesksjon Håntering Av Battle:
+
+        - Å lage battle metoden gjekk overaskande bra, men eg hadde også nokon problem her. Det første var ikkje at eg ikkje fekk til noko men at eg ikkje løyste oppgåva
+        so bra. Når eg valgte tur for kva army som skal angripe, so var det altid army1 som starta. Ikkje er dette ikkje bra fordelt sidan det er best å starte mend det
+        sammsvara ikkje med oppgåva. Etter litt tenking so brukte eg random og modilo til å få ein til ferdig verdi som kvem som angriper. army1 angriper på partall, imens army2
+        angriper på oddetall. So då blir det tilfeldig kvem som starter. Eg la so til ein variabel som gjekk opp med 1 slik at etter første runda so vart det anna kvar kva amry
+        som angrep og kvem som forsvara seg.
+
+        - Eit anna problem som eg hadde, som egentlig ikkje var at battle metoden var feil, men eg gjorde ein stor feil når eg la til soldata i army, som gjorde til at eg fekk feil
+        når eg kjørte battle. Eg la til eit objekt av ein unit til i begge armyane. So når eg kjørte battle so ein soldat fekk 0 eller mindre hp so var det berre fjerna ifrå ein av
+        armyane og eit og samme objekt kune angripe segsjølv. Dette gjorde til at når eg fekk ein vinner, so inneholt vinnaren med units om hadde - hp. Etter ein stund med buggfinder
+        so insåg eg kva eg hadde gjort. Etter å ikkje legge til objekta i begge armyane so funka battle metoden fint.
+
+    Refleksjon Struktur Og Små Dårlig Skreve Koden:
+
+        - Undervegs når eg skreiv koden, so hadde eg ein del dårlig kode som eg måtte tilbake å fikse seinare. Ein av dei var konstruktørane som eg har tidligare snakka om.
+
+        - Ein anna småfeil som eg gjorde ein del gongar var at når eg brukte for eksempel Random import og lagde ein random objekt som eg skule KUN der og då bruke i ein metode
+        so lagde eg eit objekt inni metode. Denne bure ha vært laga utanfor metoden slik at eg slepper å lage ny objekt kvar gjong eg laga ein metode.
+
+        - Også i battle metoden so hadde eg ganske mange if-else metoda inna for ein loop. Dette gjorde at det var ganske uoversiktlig kode. Eg hadde heller ikkje bruk for at
+        at mange av if-else var inna for loopen. Disse kunne eg abstrektrere ut av loppen for å få ein meir oversiktlig metode.
+
+        - Mange av getResisten og getArrmor metodane mine var dårlige. Nokon av dei skal eg berre retunere ein sat verdi, eksempel 3. Her so lagde eg eit int vareabel og ka dei en verdi.
+        Derretter rettunerte eg denne verdien. Først so tenkte eg at det var oversiktlig kode med å gjerre dette, sidan man var sikker på kva man kva den verdien representerte når man
+        retunerte den. Men dette skal være kodt nok med å ha ein javadoc som seie kva metoden retunerer og metodenamnet er tydlig på kva man får. So her hadde eg laga ekstra mykje kode
+        uten grunn, som eg måtte rydde opp i seinare.
+
+        - Javadocen min var slurvete i starten. Ikkje at eg ikkje skreiv doc når eg laga ein metode for det gjorde eg, men sjøve teksten var dårlig. Eg ofte glømte stor bokstav der det
+        skal være. Eg gjlømte mykje punktum etter ein settning og det var ikkje kode linjesille immelom forklaring og @-ar og eg la til javadoc på @override, noke som eg ikkje trengte
+        å gjere. Dette var ein irriterane jobb som eg måtte sjekke øver koden sjølv igjenn etter eg hadde skreve den for å fikse det. Editoren hjelper ikkje meg med slikt so eg måttes
+        sjå over alt sjølv. Når eg først skriver javadoc so burde eg gjere det riktig.
+
+        - Metoden som simulera eit attack, var litt dårlig. Eg matteformelen som eg fekk med oppgåva, so eg lagde metoden med denne formelen utan å tenke over det. Men etter å ha testa
+        koden og ha laga test metode so så eg at vis arrmor var so høg at attacken fekk - stats, so fekk uniten meir hp. Dette burde ikkje gå ann, sida å få meir hp av å bli angrepen
+        ikkje gjer meining. Dette må eg sjå nærmare på.
+
+        - Eg brukte SonarLint til å rydde opp mykje dårlig kode. Eg brukte også ChekcStyle google til å få ein fin struktur over heile koden. Og at strukturen var like over heile koden.
+
+    Refleksjon Pom.xml Fil
+
+    Refleksjon GUI
+
+        - Først og fremst so har eg lyst å bruke scene builder for å lage koden. Dette virker mykje lettare, meir oversiktlig og funkar like bra som
+        å hardkode grensesnittet sjølv.
+
+    Refleksjon resources of filhåntering
+
+        - Det eg først og fremst tenker på er kva av produkter kan eg bruke. Når eg lagar grensesnitet, so har eg lyst å ha med bilder og vis eg
+        greier/har tid lyd so har eg lyst å ha det med. Men kva kan eg bruke. Kan eg finne noko på google eller blir det coppyright. Må forhøre meg.
+
+    Refleksjon filhandtering
+
+        - Sjølve å lage fil gjekk fint, også å lage objekt av ein fil gjekk fint.
+
+        - Det som var eit skikkelig tankeproblem var korleis forsikra eg meg at brukaren lagar ein csv file og ikkje noko anna.
+        Det samme hjelder når man skal åpne ein fil, at det er ein csv fil man oppnar. Også kor blir det lagra hen. Skal brukeren få lov
+        å velge kor han lagra fila sjølv eller blir det vansklig. Skal programet ha ein fast plass kor man lagra filene so so får heller
+        brukeren opp ein liste over filene som er laga og brukeren berre velger utifrå den lista. Detter er sprøsmål eg må sjå på når eg laga GUI
+
+        - Foreløpig har eg klar å sjekke om kva type fil som eg prøver å lese, også har eg gjort det slik at dei ikkje kan lage noko anna en ein txt file.
+        Dette gjorde meg med nokon if og else if, som sjekker kva brukren skriver inn. vis det er ein . som ikkje er ein .csv so får ikkje brukeren lage fila.
+        Har også gjort det slik at vis det ikkje er noko .csv i namnet so blir det auto lakt på, og vis det er .csv i namnet so blir det ikkje lakt på.
+
+        - Hadde valkt å lage metoder som lagde units i CSVFileHandler. Dette måtte eg skifte til slik at eg brukte metodene ifrå UnitFactory.
+
+    Argumentasjon
+    -
+Refector
+ - Skifte namn på files mappa.
+ - Endre kor man får lagre csv files.
+ - Endre fxml files til borderpane og vbox.
+

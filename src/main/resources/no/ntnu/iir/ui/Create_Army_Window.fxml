@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.iir.ui.CreateArmyWindowController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #0B0B45;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Army">
+               <font>
+                  <Font name="Goudy Old Style Bold" size="50.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="80.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MFXButton onAction="#cancelButtonPressed" prefHeight="48.0" prefWidth="253.0" style="-fx-background-color: red;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </MFXButton>
+            <MFXButton graphicTextGap="7.0" onAction="#createArmyButtonPressed" prefHeight="48.0" prefWidth="253.0" style="-fx-background-color: green;" text="    Create Army" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="#fffdfd" iconLiteral="eli-check" />
+               </graphic>
+            </MFXButton>
+            <MFXButton onAction="#infoButtonPressed" prefHeight="48.0" prefWidth="253.0" style="-fx-background-color: #04D2D5;" text="Info" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Army Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXTextField fx:id="armyName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="InfatryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="infatryCheckBox" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RangeUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="rangeCheckBox" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CavlryUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="cavlryCheckBox" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MageUnit">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXCheckbox fx:id="mageCheckBox" />
+               </children>
+               <VBox.margin>
+                  <Insets left="239.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Text>
+                  <MFXTextField fx:id="infatryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="38.0" right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="rangeName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="181.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <MFXTextField fx:id="cavlryName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="191.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="mageName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Text>
+                  <MFXTextField fx:id="infatryHealth" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="rangeHealth" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="181.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <MFXTextField fx:id="cavlryHealth" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="191.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="mageHealth" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Text>
+                  <MFXTextField fx:id="infatryAttack" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="16.0" right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="rangeAttack" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="181.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <MFXTextField fx:id="cavlryAttack" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="191.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="mageAttack" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armor">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Text>
+                  <MFXTextField fx:id="infatryArmor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="23.0" right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="rangeArmor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="181.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <MFXTextField fx:id="cavlryArmor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="191.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="mageArmor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Units">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="32.0" />
+                     </HBox.margin>
+                  </Text>
+                  <MFXTextField fx:id="infatryNumberOfUnits" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="16.0" right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="rangeNumberOfUnits" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="181.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <MFXTextField fx:id="cavlryNumberOfUnits" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="191.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MFXTextField>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXTextField fx:id="mageNumberOfUnits" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Commander Unit">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="22.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Name">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXTextField fx:id="commanderName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <MFXTextField fx:id="commanderHealth" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="184.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

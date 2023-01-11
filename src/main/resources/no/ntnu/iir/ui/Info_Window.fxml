@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.iir.ui.InfoWindowController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1280.0" spacing="5.0" style="-fx-background-color: #0B0B45;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Info">
+               <font>
+                  <Font name="Goudy Old Style Bold" size="50.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="80.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Two_Sword_Crossing.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="620.0" prefWidth="1284.0" spacing="20.0">
+               <children>
+                  <TextArea fx:id="textArea" prefHeight="535.0" prefWidth="1280.0" text="About WareGame:                                                         Units:                                                                      StandardGame:                                                               Create Army:                                                             Custom Game:&#10;&#10;WareGame is an battle simulation.                               There is alot of different units you can buld           In standard game mode, there is allredy created          In Create army you can create your one army.      To play custom game you &#10;It simulate battle between to armies.                            your armies from, and all of them have                 armies for you. The Alliance vs The Horde. Each            A army needs a army name, Commander             need have 2 armies created&#10;                                                                                      different stats. The units get stats based                army hase 200 infantry, 200 range, 50 cavalry, 50         name and coommander health.                             Presse the find file buttons&#10;In this app you can create armies and have                 on the different terrain the armies fight in.             mage-units and a commander.                                     Tho choose what units you want you just chech    to fin the files with the &#10;them fight, or you can play a standerd game.              You can also create unit where you set all                                                                                                     the cheboxs for what unit you want.                      armies that you want.&#10;                                                                                                                                                                      To do a battle you need first to choose a terrain          The unit you choose you want, need alest to         You cant choose the same&#10;The outcome of the fights are random, but if              InfantryUnit:                                                             you want to fight in. Afther you have chose one           have name, health and a number of how many     file twise. Afther you have&#10;a armie is stronger then the outer, it have a                This unit get a + 1 attack and resist                         you can start the battle by pressing the play                units you want. You can choos to have default       chose the armies you want&#10;bigger chans to winn.                                                   stat, when he fights in forrest.                                 button. Afthe the battle is done you the wining            attack and armor stats for balancing, or you           you just presse the play&#10;                                                                                     Default AttackBonus: 2                                             army popup and the remaning units is shown.             can go wilde and set your on stats.                         button.&#10;                                                                                     Default ResistBonus: 1                                              If you want to do a new battle you can press&#10;                                                                                     Default Attack : 15                                                    the reset button, and do it over.                                    Afther you have chosen what stats and number     You play the game the&#10;                                                                                     Default Armor: 10                                                                                                                                            of units you want, press the create army button.     same way as describe in&#10;                                                                                                                                                                                                                                                              When you do that, you can choose where on the   StandardGame.&#10;                                                                                     RangeUnit:                                                                                                                                                       PC you want to save it, and what name of the &#10;                                                                                     This unit get + 1 attack for hills terrain                                                                                                           file.&#10;                                                                                     And -1 for forest terrain.&#10;                                                                                     This units ResistBonus goes down by 1&#10;                                                                                     every time it attacks, until it hits 1.&#10;                                                                                     Default AttackBonus: 3&#10;                                                                                     Default ResistBonus: 4&#10;                                                                                     Default Attack : 15&#10;                                                                                     Default Armor: 8&#10;&#10;                                                                                     CavalryUnit:&#10;                                                                                     This unit get +1 AttackBonus whe it has&#10;                                                                                     plains terrain type. When it have terrain&#10;                                                                                     type forrest it DeffenBonus is 0.&#10;                                                                                     When this unit attacks for the first time,&#10;                                                                                     it have a AttackBonus + 4.&#10;                                                                                     Default AttackBonus: 3&#10;                                                                                     Default ResistBonus: 4&#10;                                                                                     Default Attack : 20&#10;                                                                                     Default Armor: 12&#10;&#10;                                                                                     MageUnit:&#10;                                                                                     This unit is not effected by terrain.&#10;                                                                                     Default AttackBonus: 2&#10;                                                                                     Default ResistBonus: 2&#10;                                                                                     Default Attack : 20&#10;                                                                                     Default Armor: 5&#10;&#10;                                                                                     Commander&#10;                                                                                     Have the same stats ass CavlaryUnit" />
+                  <MFXButton accessibleHelp="t" onAction="#backButtonPressed" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: red;" text="Back" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
